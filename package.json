@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "fix": "sh ./scripts/update.sh && git add . && git commit -m 'fix: update date'",
+    "test": "semantic-release --dry-run",
     "release": "semantic-release"
   },
   "devDependencies": {
