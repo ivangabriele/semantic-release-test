@@ -1,0 +1,46 @@
+{
+  "name": "semantic-release-test",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "fix": "sh ./scripts/update.sh && git add . && git commit -m 'fix: update date'",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@ivangabriele/prettier-config": "2.0.2",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.1",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.2",
+    "@semantic-release/npm": "8.0.3",
+    "@semantic-release/release-notes-generator": "10.0.2",
+    "semantic-release": "18.0.0"
+  },
+  "prettier": "@ivangabriele/prettier-config",
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
+}
