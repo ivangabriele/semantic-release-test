@@ -2,6 +2,7 @@
   "name": "@ivangabriele/semantic-release-test",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./index.js",
   "scripts": {
     "fix": "sh ./scripts/update.sh && git add . && git commit -m 'fix: update date'",
     "test": "semantic-release --dry-run",
@@ -17,7 +18,19 @@
     "@semantic-release/release-notes-generator": "10.0.2",
     "semantic-release": "18.0.0"
   },
+  "author": {
+    "email": "ivan.gabriele@gmail.com",
+    "name": "Ivan Gabriele",
+    "url": "https://www.ivangabriele.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ivangabriele/semantic-release-test/issues"
+  },
+  "homepage": "https://github.com/ivangabriele/semantic-release-test#readme",
   "prettier": "@ivangabriele/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  },
   "release": {
     "branches": [
       "main",
@@ -42,5 +55,9 @@
         }
       ]
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivangabriele/semantic-release-test.git"
   }
 }
